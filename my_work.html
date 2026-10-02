@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This HTML file provides a simple example of a portfolio page. It contains a header, a few sections, and a few charts. -->
-<!-- It works with the three css files in this folder: example1.css, example2.css and example3.css. -->
+<!-- It works with the three css files in this folder: example1.css, example2.css and styles.css. -->
 <!-- The HTML file defines the structure of the page, and the CSS files define how it looks. -->
 <!-- The CSS examples are all designed to work with this page. Try swapping them out on line 29 and see what happens. -->
 
@@ -23,8 +23,9 @@
     <!-- The head tag links to resources our page needs and defines information about it. Tags in the <head> aren't displayed on the page. -->
 
     <!-- This is a link to a stylesheet which contains rules about how each element on the page should be defined-->
-    <!-- Try swapping to example3.css or another, and take a look at each example.css to see if you understand it-->
-    <link rel="stylesheet" type="text/css" href="Example3.css">
+    <!-- Try swapping to styles
+     .css or another, and take a look at each example.css to see if you understand it-->
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Victor Lucy</title> <!-- The title displayed in the browser tab, not on the page itself -->
 
     <!-- This is a link to the vega-lite packages which we're using to make graphs -->
@@ -68,7 +69,21 @@
         </div>
 
         <!-- This element will contain our vega-lite chart -->
-        <figure id="Location1"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        <figure id="chart1"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+
+    </section>
+
+     <section>
+        <div class="chart-description">
+            <h2>Section 2: Another basic chart</h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                We've organised the page into sections, with each section containing a chart, title and a description. Here, we can describe the chart and give some context.
+                As a first example, we're using a basic chart from our repo.
+            </p>
+        </div>
+
+        <!-- This element will contain our vega-lite chart -->
+        <figure id="chart2"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
 
     </section>
 
@@ -82,22 +97,16 @@
     <script>
         // This is a comment in JavaScript - it's a different language to HTML and CSS
 
-        let figure_1_spec = "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/2/s2_chart2.json"; // We're storing the URL of the graph we want to display in a variable
+        let figure_1_spec = "wk1_chart1.json"; // We're storing the URL of the graph we want to display in a variable
         // You should have a spec for a graph in this same folder. Just specify its name here, e.g. let figure_1_spec = "chart1.json"
 
-        vegaEmbed('#Location1', figure_1_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
+        vegaEmbed('#chart1', figure_1_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
 
-         let figure_2_spec = "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/2/s2_chart2.json"; // We're storing the URL of the graph we want to display in a variable
-        // You should have a spec for a graph in this same folder. Just specify its name here, e.g. let figure_1_spec = "chart1.json"
 
-        vegaEmbed('#Location2', figure_2_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
+        let figure_2_spec = "chart2.json"; // We're storing the URL of the graph we want to display in a variable
+          vegaEmbed('#chart2', figure_2_spec)
 
-         let figure_3_spec = "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/2/s2_chart2.json"; // We're storing the URL of the graph we want to display in a variable
-        // You should have a spec for a graph in this same folder. Just specify its name here, e.g. let figure_1_spec = "chart1.json"
-
-        vegaEmbed('#Location3', figure_3_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
-        
-        
+          
         // Do you want to add more graphs?
         // try defining a new variable for figure_2_spec, adding VegaEmbed for Location2, and adding a new section in the HTML
         // e.g. 
