@@ -26,7 +26,7 @@
     <!-- Try swapping to styles
      .css or another, and take a look at each example.css to see if you understand it-->
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>Victor Lucy</title> <!-- The title displayed in the browser tab, not on the page itself -->
+    <title>Victor M. Lucy</title> <!-- The title displayed in the browser tab, not on the page itself -->
 
     <!-- This is a link to the vega-lite packages which we're using to make graphs -->
     <script src="https://cdn.jsdelivr.net/npm/vega@6.4.0"></script>
@@ -47,14 +47,16 @@
     <h1 class="big" style="margin-bottom: 0px;"> <!-- We have added a class to the header called "big" which we can use to style it in the CSS -->
         <!-- This is a header, it is the largest text on the page -->
         Victor Lucy
+   <body>
+    <h1 class="big" style="margin-bottom: 0px;">
+        Victor M. Lucy
     </h1>
     <p style="margin-top: 3px; color: black">
-        <!-- we're setting the margin to 0px so the header and authour name are close together -->
-         <a href="https://www.linkedin.com/in/victorlucy/">LinkedIn</a> 
-         <a href="https://www.github.com/victormlucy">GitHub</a>
-         <a href="projects.html" aria-current="page">Projects</a>
-         <a href="cv.html" aria-current="page">CV</a>
-         <a href="contact.html" aria-current="page">Contact</a>
+         <a href="https://www.linkedin.com/in/YOUR-LINKEDIN/">LinkedIn</a>
+         <a href="https://www.github.com/jakobbilan">GitHub</a>
+         <a href="projects.html">Projects</a>
+         <a href="cv.html">CV</a>
+         <a href="contact.html">Contact</a>
     </p>
     <h3 class="small"> <!-- We have added a class to the header called "small" which we can use to style it in the CSS -->
         Hello! Welcome to my page. Here you will find my work for LSE course PP434 Automated Data Visualisation for Public Policy. 
@@ -120,4 +122,54 @@
 
 </body>
     
+</html>
+
+
+
+
+
+
+
+    
+
+ 
+
+
+    </p>
+    <h3 class="small">
+        Hello! Welcome to my page. Here you will find my work for LSE course PP434 Automated Data Visualisation for Public Policy.
+        <br> Keep an eye on this for updates on my work.
+    </h3>
+
+    <section>
+        <div class="chart-description">
+            <h2>Section 1: A basic chart</h2>
+            <p>
+                We've organised the page into sections, with each section containing a chart, title and a description. Here, we can describe the chart and give some context.
+                As a first example, we're using a basic chart from our repo.
+            </p>
+        </div>
+        <figure id="chart1"></figure>
+    </section>
+
+    <section>
+        <div class="chart-description">
+            <h2>Section 2: Another basic chart</h2>
+            <p>
+                We've organised the page into sections, with each section containing a chart, title and a description. Here, we can describe the chart and give some context.
+                As a first example, we're using a basic chart from our repo.
+            </p>
+        </div>
+        <figure id="chart2"></figure>
+    </section>
+
+    <script>
+        let figure_1_spec = "wk1_chart1.json";
+        vegaEmbed('#chart1', figure_1_spec);
+
+        let figure_2_spec = "wk1_chart2.json";
+        vegaEmbed('#chart2', figure_2_spec);
+    </script>
+</body>
+
 </html>
