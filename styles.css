@@ -45,7 +45,8 @@ p {
 }
 
 section {
-  margin-bottom: 2.5em;  /* We want a little more space between sections */
+  margin-bottom: 2.5em;
+};  /* We want a little more space between sections */
 }
 
 /* Links */
@@ -54,7 +55,6 @@ a {
   color: #065f46;
   text-decoration: none;
 }
-
 a:hover {
   text-decoration: underline;
 }
@@ -64,3 +64,4 @@ img {
   max-width: 100%;
   height: auto;
 }
+
