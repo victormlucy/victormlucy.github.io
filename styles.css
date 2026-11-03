@@ -1,50 +1,284 @@
-/* This is an example CSS file. If you include it in your portfolio, it'll provide some clean and basic styling */
-/* for your page. Feel free to experiment with the values, or copy them into a new file and use that instead. */
-
-/* These are comments in CSS. Comments don't do anything except explain your working to make code easier to understand. */
-
 /* Page: one centred column; serif stack Charter (Apple), Sitka (Windows), Cambria */
 body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333;
-    max-width: 800px;
+    max-width: 44rem;
     margin: 0 auto;
-    padding: 0 1.25rem;
+    padding: 2rem 1.25rem 4rem;
+    font-family: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
+    font-size: 1.125rem;
+    line-height: 1.6;
 }
 
+/* Header: name left, menu right; wraps on narrow screens */
 header {
     display: flex;
-    justify-content: space-between;  /* name left, buttons right */
-    align-items: center;
     flex-wrap: wrap;
-    padding: 1rem 0;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem 2rem;
+    margin-bottom: 3.5rem;
 }
 
 .site-name {
-    font-size: 1.5rem;
-    font-weight: 700;                /* bold name */
-    color: #111;
+    font-weight: bold;
+    color: inherit;
+    text-decoration: none;
 }
 
 nav {
     display: flex;
-    gap: 0.25rem;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.25rem;
+    font-size: 1rem;
 }
 
 nav a {
-    padding: 0.4rem 0.8rem;
-    border-radius: 6px;
-    color: #333;
+    color: inherit;
     text-decoration: none;
-    transition: background-color 0.15s;
+    text-underline-offset: 0.3em;
 }
 
 nav a:hover {
-    background-color: #e5e5e5;       /* highlight on hover */
+    text-decoration: underline;
 }
 
-nav a[aria-current="page"] {
-    font-weight: 600;                /* marks the page you're on */
+/* Menu link of the current page, or of the parent page on subpages */
+nav a[aria-current] {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+h1 {
+    font-size: 2.25rem;
+    font-weight: normal;
+    line-height: 1.2;
+    margin: 0 0 1rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    line-height: 1.25;
+    margin: 0 0 0.5rem;
+}
+
+h3 {
+    font-size: 1.125rem;
+    font-weight: bold;
+    line-height: 1.4;
+    margin: 0 0 0.6rem;
+}
+
+/* Page title with lines of details beneath */
+hgroup {
+    margin-bottom: 2.5rem;
+}
+
+hgroup h1 {
+    margin-bottom: 0.4rem;
+}
+
+hgroup p {
+    margin: 0;
+    font-size: 1rem;
+    color: #595959;
+}
+
+/* Links in page content: grey underline, darker on hover */
+main a {
+    color: inherit;
+    text-decoration-color: #a6a6a6;
+    text-underline-offset: 0.18em;
+}
+
+main a:hover {
+    text-decoration-color: currentColor;
+}
+
+a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+}
+
+/* Portfolio and project pages */
+.charts section {
+    margin-top: 3rem;
+}
+
+/* Charts wider than the column scroll sideways */
+.charts figure {
+    margin: 1rem 0 0;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.charts figure + figure {
+    margin-top: 2rem;
+}
+
+.charts figcaption {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: #595959;
+}
+
+/* Charts grouped under one challenge */
+.charts section section {
+    margin-top: 2rem;
+}
+
+.charts h2 + section {
+    margin-top: 1.25rem;
+}
+
+/* Link back to the parent page on subpages */
+.breadcrumb {
+    margin: 0 0 1rem;
+    font-size: 1rem;
+    color: #595959;
+}
+
+/* Section headings in small caps over a rule: CV, research and projects pages */
+.cv h2,
+.research h2 {
+    font-size: 1.0625rem;
+    font-weight: bold;
+    font-variant-caps: small-caps;
+    letter-spacing: 0.05em;
+    padding-bottom: 0.15rem;
+    border-bottom: 1px solid #7a7a7a;
+    margin: 2.25rem 0 0.9rem;
+}
+
+/* Research and projects pages */
+.research h2 {
+    margin: 3rem 0 1.25rem;
+}
+
+.research section:first-of-type h2 {
+    margin-top: 1.5rem;
+}
+
+/* Grey detail lines and placeholders */
+.meta {
+    margin: 0;
+    font-size: 1rem;
+    color: #595959;
+}
+
+/* Entries on the research and projects pages, a light rule between them */
+.paper {
+    padding: 1.5rem 0;
+}
+
+.paper:first-of-type {
+    padding-top: 0;
+}
+
+.paper + .paper {
+    border-top: 1px solid #dcdcdc;
+}
+
+.paper h3 {
+    margin-bottom: 0.7rem;
+}
+
+.closing {
+    margin: 1rem 0 0;
+    font-size: 1rem;
+    color: #595959;
+}
+
+/* Label | details grids: contact page and entry fields */
+.contact,
+.fields {
+    display: grid;
+    grid-template-columns: 7rem 1fr;
+    gap: 0.5rem 1.5rem;
+    margin: 0;
+}
+
+.contact dt,
+.fields dt {
+    grid-column: 1;
+    color: #595959;
+}
+
+.contact dd,
+.fields dd {
+    grid-column: 2;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+.fields {
+    font-size: 1rem;
+    line-height: 1.55;
+    row-gap: 0.45rem;
+}
+
+/* CV page */
+.cv {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.cv p {
+    margin: 0 0 0.35rem;
+}
+
+.entry {
+    margin-bottom: 0.9rem;
+}
+
+/* CV line: organisation or role left, place or dates right */
+.line {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 1.5rem;
+    align-items: baseline;
+}
+
+.line > :last-child {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.org {
+    font-weight: bold;
+}
+
+.role {
+    font-style: italic;
+}
+
+/* Phones: two-column layouts become one column */
+@media (max-width: 36rem) {
+    .line {
+        grid-template-columns: 1fr;
+    }
+
+    .line > :last-child {
+        text-align: left;
+    }
+
+    .contact,
+    .fields {
+        grid-template-columns: 1fr;
+        row-gap: 0;
+    }
+
+    .contact dt,
+    .contact dd,
+    .fields dt,
+    .fields dd {
+        grid-column: 1;
+    }
+
+    .contact dt {
+        margin-top: 0.75rem;
+    }
+
+    .fields dt {
+        margin-top: 0.6rem;
+    }
 }
