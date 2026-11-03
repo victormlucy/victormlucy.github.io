@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jakob Kilian Bilan</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1rem 1.25rem 4rem;
+      color: #222;
+    }
+    nav { display: flex; gap: 1rem; flex-wrap: wrap; padding-bottom: 1rem; border-bottom: 1px solid #ddd; margin-bottom: 2rem; }
+    nav a { text-decoration: none; color: #0366d6; }
+    nav a:hover { text-decoration: underline; }
+    .links a { color: #0366d6; }
+    section { margin-top: 3rem; }
+    section img { max-width: 100%; height: auto; display: block; margin: 1rem 0; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html"><strong>Victor M. Lucy</strong></a>
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="cv.html">CV</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <h1>Victor M. Lucy</h1>
+
+  <p class="links">
+    Victor M. Lucy |
+    <a href="https://www.linkedin.com/in/victorlucy//">LinkedIn</a> |
+    <a href="https://github.com/victormlucy/">GitHub</a>
+  </p>
+
+  <h3>Hello! Welcome to my page. Here you will find my work for LSE course PP434 Automated Data Visualisation for Public Policy. Keep an eye on this for updates on my work.</h3>
+
+  <section id="section-1">
+    <h2>Section 1: A basic chart</h2>
+    <p>Describe the chart and give some context here.</p>
+    <img src="charts/chart1.png" alt="Description of chart 1">
+    <!-- or embed an interactive chart: -->
+    <!-- <iframe src="charts/chart1.html" width="100%" height="450" style="border:0;"></iframe> -->
+  </section>
+
+  <section id="section-2">
+    <h2>Section 2: Another basic chart</h2>
+    <p>Describe the chart and give some context here.</p>
+    <img src="charts/chart2.png" alt="Description of chart 2">
+  </section>
+
+</body>
+</html>
