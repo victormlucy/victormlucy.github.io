@@ -43,11 +43,44 @@ body > header {
 }
 
 .site-name {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.32rem;
     color: var(--ink);
-    font-size: 1.05rem;
-    font-weight: 750;
-    letter-spacing: -0.035em;
     text-decoration: none;
+}
+
+.wordmark {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.18rem;
+    color: var(--ink);
+    white-space: nowrap;
+}
+
+.wordmark-first,
+.wordmark-middle,
+.wordmark-last {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    line-height: 1;
+}
+
+.wordmark-middle {
+    margin-right: -0.08rem;
+}
+
+.wordmark-last {
+    padding: 0 0.05rem 0.08rem;
+}
+
+.footer-wordmark .wordmark-first,
+.footer-wordmark .wordmark-middle,
+.footer-wordmark .wordmark-last {
+    font-size: 1rem;
 }
 
 nav {
@@ -77,16 +110,17 @@ nav a[aria-current] {
     align-items: center;
     gap: 0.45rem;
     color: var(--muted);
-    font-size: 0.83rem;
-    font-weight: 600;
+    font-size: 0.78rem;
+    font-weight: 500;
 }
 
 .language-switcher select {
     min-height: 2.2rem;
     padding: 0.35rem 1.8rem 0.35rem 0.6rem;
-    border: 1px solid var(--line);
-    border-radius: 0.45rem;
-    background: var(--surface);
+    border: 0;
+    border-bottom: 1px solid var(--muted);
+    border-radius: 0;
+    background: transparent;
     color: var(--ink);
     font: inherit;
 }
@@ -253,8 +287,8 @@ main a:hover {
 .city-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.65rem;
-    margin-top: 1.5rem;
+    gap: 0.85rem;
+    margin-top: 1.8rem;
 }
 
 .city-card {
@@ -263,7 +297,7 @@ main a:hover {
     min-height: 17rem;
     margin: 0;
     overflow: hidden;
-    border-radius: 0.65rem;
+    border-radius: 0.85rem;
     isolation: isolate;
 }
 
@@ -301,12 +335,12 @@ main a:hover {
     left: 0;
     display: grid;
     gap: 0.35rem;
-    padding: 1.25rem;
+    padding: 1rem;
     color: #fff;
 }
 
 .city-card figcaption strong {
-    font-size: 1.35rem;
+    font-size: 1.05rem;
     line-height: 1.2;
 }
 
@@ -428,6 +462,38 @@ main > h1 {
     line-height: 1.65;
 }
 
+.about {
+    max-width: 54rem;
+}
+
+.about h1 {
+    max-width: 16ch;
+}
+
+.about-lead {
+    max-width: 46rem;
+    margin-bottom: 3rem;
+    color: var(--muted);
+    font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+    line-height: 1.6;
+}
+
+.about section + section {
+    margin-top: 2.5rem;
+}
+
+.about section p {
+    max-width: 46rem;
+    color: var(--muted);
+}
+
+.about-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+}
+
 .cv section + section {
     margin-top: 3rem;
 }
@@ -516,11 +582,11 @@ body > footer {
     }
 
     .city-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
     }
 
     .city-card img {
-        object-position: center;
+        aspect-ratio: 1.8;
     }
 }
 
