@@ -4,42 +4,53 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Contact Victor M. Lucy.">
-    <title>Contact | Victor M. Lucy</title>
+    <meta name="description" content="Contact Victor M. Lucy." data-i18n-content="contactDescription">
+    <title data-i18n-title="contactTitle">Contact | Victor M. Lucy</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <header>
         <a class="site-name" href="index.html">Victor M. Lucy</a>
-        <nav aria-label="Main navigation">
-            <a href="index.html">Home</a>
-            <a href="projects.html">Projects</a>
-            <a href="cv.html">CV</a>
-            <a href="contact.html" aria-current="page">Contact</a>
+        <nav aria-label="Main navigation" data-i18n-aria-label="mainNavigation">
+            <a href="index.html" data-i18n="navHome">Home</a>
+            <a href="projects.html" data-i18n="navProjects">Projects</a>
+            <a href="cv.html" data-i18n="navCV">CV</a>
+            <a href="contact.html" aria-current="page" data-i18n="navContact">Contact</a>
         </nav>
+        <label class="language-switcher">
+            <span data-i18n="languageLabel">Language</span>
+            <select data-language-select aria-label="Select language" data-i18n-aria-label="selectLanguage">
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+            </select>
+        </label>
     </header>
 
     <main>
-        <h1>Contact</h1>
+        <h1 data-i18n="navContact">Contact</h1>
 
         <dl class="contact">
-            <dt>Email</dt>
-            <dd><a href="mailto:victorlucy.vl@gmail.com">victorlucy.vl@gmail.com</a> (personal)</dd>
-            <dd><a href="mailto:v.m.lucy@lse.ac.uk">v.m.lucy@lse.ac.uk</a> (LSE)</dd>
-            <dd><a href="mailto:victor.lucy@sciencespo.fr">victor.lucy@sciencespo.fr</a> (Sciences Po)</dd>
+            <dt data-i18n="email">Email</dt>
+            <dd>
+                <a href="mailto:victorlucy.vl@gmail.com">victorlucy.vl@gmail.com</a> (<span data-i18n="personal">personal</span>)<br>
+                <a href="mailto:v.m.lucy@lse.ac.uk">v.m.lucy@lse.ac.uk</a> (LSE)<br>
+                <a href="mailto:victor.lucy@sciencespo.fr">victor.lucy@sciencespo.fr</a> (Sciences Po)
+            </dd>
 
-            <dt>LinkedIn</dt>
+            <dt data-i18n="linkedIn">LinkedIn</dt>
             <dd><a href="https://www.linkedin.com/in/victorlucy/">linkedin.com/in/victorlucy</a></dd>
 
             <dt>GitHub</dt>
             <dd><a href="https://github.com/victormlucy">github.com/victormlucy</a></dd>
 
-            <dt>Location</dt>
-            <dd>London, UK   &    Paris, France</dd>
+            <dt data-i18n="location">Location</dt>
+            <dd data-i18n="contactLocation">London, UK&nbsp;&nbsp;&amp;&nbsp;&nbsp;Paris, France</dd>
         </dl>
     </main>
 
-    <footer>Victor M. Lucy <span aria-hidden="true">·</span> London and Paris</footer>
+    <footer>Victor M. Lucy</footer>
+    <script src="translations.js"></script>
 </body>
 </html>

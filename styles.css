@@ -72,6 +72,25 @@ nav a[aria-current] {
     color: var(--accent-dark);
 }
 
+.language-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: var(--muted);
+    font-size: 0.83rem;
+    font-weight: 600;
+}
+
+.language-switcher select {
+    min-height: 2.2rem;
+    padding: 0.35rem 1.8rem 0.35rem 0.6rem;
+    border: 1px solid var(--line);
+    border-radius: 0.45rem;
+    background: var(--surface);
+    color: var(--ink);
+    font: inherit;
+}
+
 a:focus-visible {
     outline: 3px solid #c67a43;
     outline-offset: 3px;
@@ -233,45 +252,72 @@ main a:hover {
 
 .city-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
     margin-top: 1.5rem;
 }
 
 .city-card {
+    position: relative;
     min-width: 0;
+    min-height: 17rem;
     margin: 0;
     overflow: hidden;
-    border: 1px solid var(--line);
-    border-radius: 0.85rem;
-    background: var(--surface);
+    border-radius: 0.65rem;
+    isolation: isolate;
 }
 
 .city-card img {
     display: block;
+    position: absolute;
+    z-index: -2;
+    inset: 0;
     width: 100%;
-    aspect-ratio: 1.55;
+    height: 100%;
     object-fit: cover;
+    transition: transform 220ms ease;
 }
 
 .city-card:nth-child(2) img {
     object-position: 58% center;
 }
 
+.city-card::after {
+    position: absolute;
+    z-index: -1;
+    background: linear-gradient(180deg, rgb(9 20 27 / 5%) 20%, rgb(9 20 27 / 82%) 100%);
+    content: "";
+    inset: 0;
+}
+
+.city-card:hover img {
+    transform: scale(1.04);
+}
+
 .city-card figcaption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
     display: grid;
-    gap: 0.3rem;
-    padding: 1rem;
+    gap: 0.35rem;
+    padding: 1.25rem;
+    color: #fff;
 }
 
 .city-card figcaption strong {
-    font-size: 1.05rem;
+    font-size: 1.35rem;
+    line-height: 1.2;
 }
 
 .city-card figcaption span {
-    color: var(--muted);
+    color: rgb(255 255 255 / 88%);
     font-size: 0.72rem;
     line-height: 1.5;
+}
+
+.city-card figcaption a {
+    color: inherit;
 }
 
 .card-grid {
@@ -470,11 +516,11 @@ body > footer {
     }
 
     .city-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .city-card img {
-        aspect-ratio: 1.8;
+        object-position: center;
     }
 }
 
@@ -491,6 +537,10 @@ body > footer {
 
     nav a {
         padding: 0.4rem 0.65rem;
+    }
+
+    .city-grid {
+        grid-template-columns: 1fr;
     }
 
     .fields,

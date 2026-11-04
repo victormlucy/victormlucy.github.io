@@ -4,96 +4,114 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Policy research, public policy and data visualisation by Victor M. Lucy.">
-    <title>Victor M. Lucy | Policy &amp; Data</title>
+    <meta name="description" content="Policy research, public policy and data visualisation by Victor M. Lucy." data-i18n-content="homeDescription">
+    <title data-i18n-title="homeTitle">Victor M. Lucy | Policy &amp; Data</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <header>
         <a class="site-name" href="index.html">Victor M. Lucy</a>
-        <nav aria-label="Main navigation">
-            <a href="index.html" aria-current="page">Home</a>
-            <a href="projects.html">Projects</a>
-            <a href="cv.html">CV</a>
-            <a href="contact.html">Contact</a>
+        <nav aria-label="Main navigation" data-i18n-aria-label="mainNavigation">
+            <a href="index.html" aria-current="page" data-i18n="navHome">Home</a>
+            <a href="projects.html" data-i18n="navProjects">Projects</a>
+            <a href="cv.html" data-i18n="navCV">CV</a>
+            <a href="contact.html" data-i18n="navContact">Contact</a>
         </nav>
+        <label class="language-switcher">
+            <span data-i18n="languageLabel">Language</span>
+            <select data-language-select aria-label="Select language" data-i18n-aria-label="selectLanguage">
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+            </select>
+        </label>
     </header>
 
     <main>
         <section class="hero">
             <div>
-                <p class="eyebrow">Policy research · Evidence · Data</p>
-                <h1>Making policy questions clearer through evidence.</h1>
-                <p class="hero-copy">I’m Victor Lucy, a policy researcher and MPA student at LSE. I work across policy analysis, research and data visualisation.</p>
+                <p class="eyebrow" data-i18n="homeEyebrow">Policy research · Evidence · Data</p>
+                <h1 data-i18n="homeHeading">Making policy questions clearer through evidence.</h1>
+                <p class="hero-copy" data-i18n="homeIntro">I’m Victor Lucy, a policy researcher and MPA student at LSE. I work across policy analysis, research and data visualisation.</p>
                 <div class="actions">
-                    <a class="button" href="projects.html">Explore my projects</a>
-                    <a class="button button-secondary" href="cv.html">View my CV</a>
+                    <a class="button" href="projects.html" data-i18n="homeProjectsLink">Explore my projects</a>
+                    <a class="button button-secondary" href="cv.html" data-i18n="homeCVLink">View my CV</a>
                 </div>
             </div>
             <aside class="hero-aside">
-                <p class="eyebrow">Currently exploring</p>
-                <h2>Policy through data</h2>
-                <p>Work from LSE’s Automated Data Visualisation for Public Policy course, alongside policy projects on housing and clean electricity.</p>
+                <p class="eyebrow" data-i18n="homeAsideEyebrow">Currently exploring</p>
+                <h2 data-i18n="homeAsideHeading">Policy through data</h2>
+                <p data-i18n="homeAsideText">Work from LSE’s Automated Data Visualisation for Public Policy course, alongside policy projects on housing and clean electricity.</p>
             </aside>
         </section>
 
         <section class="home-section places-section">
-            <p class="eyebrow">Places in my story</p>
-            <h2>Vancouver, Paris and London.</h2>
-            <p>Three cities connected to my work, studies and life.</p>
+            <p class="eyebrow" data-i18n="placesEyebrow">Places in my story</p>
+            <h2 data-i18n="placesHeading">Vancouver, Paris, London and Mexico City.</h2>
+            <p data-i18n="placesIntro">Four cities connected to my work, studies and life.</p>
             <div class="city-grid">
                 <figure class="city-card">
-                    <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Skyline_of_Vancouver%2C_BC.jpg/960px-Skyline_of_Vancouver%2C_BC.jpg"
-                        alt="Downtown Vancouver skyline, harbour and North Shore mountains"
+                    <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Vancouver_harbour_skyline_%2844723845851%29.jpg/960px-Vancouver_harbour_skyline_%2844723845851%29.jpg"
+                        alt="Vancouver’s downtown skyline along the harbour" data-i18n-alt="vancouverAlt"
                         width="900" height="600" loading="lazy" decoding="async">
                     <figcaption>
                         <strong>Vancouver</strong>
-                        <span>Photo: <a href="https://commons.wikimedia.org/wiki/File:Skyline_of_Vancouver,_BC.jpg">Quintin Soloviev</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+                        <span><span data-i18n="photoCredit">Photo:</span> <a href="https://commons.wikimedia.org/wiki/File:Vancouver_harbour_skyline_(44723845851).jpg">dronepicr</a> · <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a></span>
                     </figcaption>
                 </figure>
                 <figure class="city-card">
                     <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Paris_Night.jpg/960px-Paris_Night.jpg"
-                        alt="Paris at dusk viewed from the Montparnasse Tower, with the Eiffel Tower in the distance"
+                        alt="Paris at dusk viewed from the Montparnasse Tower, with the Eiffel Tower in the distance" data-i18n-alt="parisAlt"
                         width="900" height="284" loading="lazy" decoding="async">
                     <figcaption>
                         <strong>Paris</strong>
-                        <span>Photo: <a href="https://commons.wikimedia.org/wiki/File:Paris_Night.jpg">Benh LIEU SONG</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></span>
+                        <span><span data-i18n="photoCredit">Photo:</span> <a href="https://commons.wikimedia.org/wiki/File:Paris_Night.jpg">Benh LIEU SONG</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></span>
                     </figcaption>
                 </figure>
                 <figure class="city-card">
-                    <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/London_Skyline_from_Waterloo_Bridge%2C_London%2C_UK_-_Diliff.jpg/960px-London_Skyline_from_Waterloo_Bridge%2C_London%2C_UK_-_Diliff.jpg"
-                        alt="London skyline along the River Thames at dusk, viewed from Waterloo Bridge"
-                        width="900" height="443" loading="lazy" decoding="async">
+                    <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/City_of_London_skyline%2C_May_2017_-_geograph.org.uk_-_5392227.jpg/960px-City_of_London_skyline%2C_May_2017_-_geograph.org.uk_-_5392227.jpg"
+                        alt="Close view of the City of London skyline" data-i18n-alt="londonAlt"
+                        width="900" height="600" loading="lazy" decoding="async">
                     <figcaption>
                         <strong>London</strong>
-                        <span>Photo: <a href="https://commons.wikimedia.org/wiki/File:London_Skyline_from_Waterloo_Bridge,_London,_UK_-_Diliff.jpg">DAVID ILIFF</a> · <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a></span>
+                        <span><span data-i18n="photoCredit">Photo:</span> <a href="https://commons.wikimedia.org/wiki/File:City_of_London_skyline,_May_2017_-_geograph.org.uk_-_5392227.jpg">Keith Edkins</a> · <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a></span>
+                    </figcaption>
+                </figure>
+                <figure class="city-card">
+                    <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Mexico_City_Skyline_%285604867225%29.jpg/960px-Mexico_City_Skyline_%285604867225%29.jpg"
+                        alt="Mexico City skyline, including the Torre Latinoamericana" data-i18n-alt="mexicoCityAlt"
+                        width="900" height="675" loading="lazy" decoding="async">
+                    <figcaption>
+                        <strong data-i18n="mexicoCityName">Mexico City</strong>
+                        <span><span data-i18n="photoCredit">Photo:</span> <a href="https://commons.wikimedia.org/wiki/File:Mexico_City_Skyline_(5604867225).jpg">Francisco Anzola</a> · <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a></span>
                     </figcaption>
                 </figure>
             </div>
         </section>
 
         <section class="home-section">
-            <p class="eyebrow">A closer look</p>
-            <h2>Research with a practical purpose.</h2>
-            <p>This site brings together selected policy work, data visualisation projects and professional experience.</p>
+            <p class="eyebrow" data-i18n="closerEyebrow">A closer look</p>
+            <h2 data-i18n="closerHeading">Research with a practical purpose.</h2>
+            <p data-i18n="closerIntro">This site brings together selected policy work, data visualisation projects and professional experience.</p>
             <div class="card-grid">
                 <article class="feature-card">
-                    <p class="eyebrow">Selected work</p>
-                    <h3>Projects</h3>
-                    <p>Explore current work in policy analysis, housing and clean electricity.</p>
-                    <a href="projects.html">Browse projects →</a>
+                    <p class="eyebrow" data-i18n="selectedWork">Selected work</p>
+                    <h3 data-i18n="navProjects">Projects</h3>
+                    <p data-i18n="selectedWorkText">Explore current work in policy analysis, housing and clean electricity.</p>
+                    <a href="projects.html" data-i18n="browseProjects">Browse projects →</a>
                 </article>
                 <article class="feature-card">
-                    <p class="eyebrow">Background</p>
-                    <h3>Experience and publications</h3>
-                    <p>See my policy experience, publications, research and technical skills.</p>
-                    <a href="cv.html">View my CV →</a>
+                    <p class="eyebrow" data-i18n="background">Background</p>
+                    <h3 data-i18n="experiencePublications">Experience and publications</h3>
+                    <p data-i18n="experiencePublicationsText">See my policy experience, publications, research and technical skills.</p>
+                    <a href="cv.html" data-i18n="viewCVArrow">View my CV →</a>
                 </article>
             </div>
         </section>
     </main>
 
-    <footer>Victor M. Lucy <span aria-hidden="true">·</span> London and Paris</footer>
+    <footer>Victor M. Lucy</footer>
+    <script src="translations.js"></script>
 </body>
 </html>

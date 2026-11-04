@@ -4,65 +4,74 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Selected policy and data visualisation projects by Victor M. Lucy.">
-    <title>Projects | Victor M. Lucy</title>
+    <meta name="description" content="Selected policy and data visualisation projects by Victor M. Lucy." data-i18n-content="projectsDescription">
+    <title data-i18n-title="projectsTitle">Projects | Victor M. Lucy</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <header>
         <a class="site-name" href="index.html">Victor M. Lucy</a>
-        <nav aria-label="Main navigation">
-            <a href="index.html">Home</a>
-            <a href="projects.html" aria-current="page">Projects</a>
-            <a href="cv.html">CV</a>
-            <a href="contact.html">Contact</a>
+        <nav aria-label="Main navigation" data-i18n-aria-label="mainNavigation">
+            <a href="index.html" data-i18n="navHome">Home</a>
+            <a href="projects.html" aria-current="page" data-i18n="navProjects">Projects</a>
+            <a href="cv.html" data-i18n="navCV">CV</a>
+            <a href="contact.html" data-i18n="navContact">Contact</a>
         </nav>
+        <label class="language-switcher">
+            <span data-i18n="languageLabel">Language</span>
+            <select data-language-select aria-label="Select language" data-i18n-aria-label="selectLanguage">
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+            </select>
+        </label>
     </header>
 
     <main class="research">
-        <h1>Projects</h1>
+        <h1 data-i18n="navProjects">Projects</h1>
 
         <section>
-            <h2>Current work</h2>
+            <h2 data-i18n="currentWork">Current work</h2>
 
             <article class="paper">
-                <h3>Automated Data Visualisation for Policymaking (PP434)</h3>
+                <h3 data-i18n="project1Title">Automated Data Visualisation for Policymaking (PP434)</h3>
                 <dl class="fields">
-                    <dt>Type</dt>
-                    <dd>Data science portfolio and project, LSE MPA course</dd>
-                    <dt>Convenor</dt>
+                    <dt data-i18n="type">Type</dt>
+                    <dd data-i18n="project1Type">Data science portfolio and project, LSE MPA course</dd>
+                    <dt data-i18n="convenor">Convenor</dt>
                     <dd>Richard Davies (LSE)</dd>
-                    <dt>Period</dt>
+                    <dt data-i18n="period">Period</dt>
                     <dd>Autumn 2026</dd>
-                    <dt>Description</dt>
-                    <dd>Ten charting challenges, and a project comparing what homes in England pay in council tax, still banded on their 1991 values, with what they are worth today.</dd>
-                    <dt>Materials</dt>
-                    <dd><a href="https://github.com/victormlucy/victormlucy.github.io">Code and data on GitHub</a></dd>
+                    <dt data-i18n="description">Description</dt>
+                    <dd data-i18n="project1Description">Ten charting challenges, and a project comparing what homes in England pay in council tax, still banded on their 1991 values, with what they are worth today.</dd>
+                    <dt data-i18n="materials">Materials</dt>
+                    <dd><a href="https://github.com/victormlucy/victormlucy.github.io" data-i18n="codeDataGitHub">Code and data on GitHub</a></dd>
                 </dl>
             </article>
 
             <article class="paper">
-                <h3>Mexico's Clean Electricity Grid</h3>
+                <h3 data-i18n="project2Title">Mexico's Clean Electricity Grid</h3>
                 <dl class="fields">
-                    <dt>Type</dt>
-                    <dd>Team policy project, Strategic Policymaking (PP425), LSE MPA</dd>
-                    <dt>Role</dt>
-                    <dd>Member of a seven-person team</dd>
-                    <dt>Convenor</dt>
+                    <dt data-i18n="type">Type</dt>
+                    <dd data-i18n="project2Type">Team policy project, Strategic Policymaking (PP425), LSE MPA</dd>
+                    <dt data-i18n="role">Role</dt>
+                    <dd data-i18n="project2Role">Member of a seven-person team</dd>
+                    <dt data-i18n="convenor">Convenor</dt>
                     <dd>Luis Garicano (LSE)</dd>
-                    <dt>Period</dt>
+                    <dt data-i18n="period">Period</dt>
                     <dd>Autumn 2026</dd>
-                    <dt>Description</dt>
-                    <dd>A team policy project examining options for a cleaner electricity grid in Mexico. Further details will be added as the project develops.</dd>
-                    <dt>Link</dt>
-                    <dd><a href="https://www.lse.ac.uk/resources/calendar2026-2027/courseGuides/PP/2026_PP425.htm">Course page</a></dd>
+                    <dt data-i18n="description">Description</dt>
+                    <dd data-i18n="project2Description">A team policy project examining options for a cleaner electricity grid in Mexico. Further details will be added as the project develops.</dd>
+                    <dt data-i18n="link">Link</dt>
+                    <dd><a href="https://www.lse.ac.uk/resources/calendar2026-2027/courseGuides/PP/2026_PP425.htm" data-i18n="coursePage">Course page</a></dd>
                 </dl>
             </article>
 
         </section>
     </main>
 
-    <footer>Victor M. Lucy <span aria-hidden="true">·</span> London and Paris</footer>
+    <footer>Victor M. Lucy</footer>
+    <script src="translations.js"></script>
 </body>
 </html>
