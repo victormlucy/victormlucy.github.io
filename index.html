@@ -4,15 +4,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Victor M. Lucy</title>
+    <meta name="description" content="Policy research, public policy and data visualisation by Victor M. Lucy.">
+    <title>Victor M. Lucy | Policy &amp; Data</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <!-- Site header, same on every page; aria-current marks this page in the menu -->
     <header>
         <a class="site-name" href="index.html">Victor M. Lucy</a>
-        <nav>
+        <nav aria-label="Main navigation">
             <a href="index.html" aria-current="page">Home</a>
             <a href="projects.html">Projects</a>
             <a href="cv.html">CV</a>
@@ -21,7 +21,79 @@
     </header>
 
     <main>
-        <p>Hello! Welcome to my page. Here you will find my work for LSE course PP434 Automated Data Visualisation for Public Policy. Keep an eye on this for updates on my work.</p>
+        <section class="hero">
+            <div>
+                <p class="eyebrow">Policy research · Evidence · Data</p>
+                <h1>Making policy questions clearer through evidence.</h1>
+                <p class="hero-copy">I’m Victor Lucy, a policy researcher and MPA student at LSE. I work across policy analysis, research and data visualisation.</p>
+                <div class="actions">
+                    <a class="button" href="projects.html">Explore my projects</a>
+                    <a class="button button-secondary" href="cv.html">View my CV</a>
+                </div>
+            </div>
+            <aside class="hero-aside">
+                <p class="eyebrow">Currently exploring</p>
+                <h2>Policy through data</h2>
+                <p>Work from LSE’s Automated Data Visualisation for Public Policy course, alongside policy projects on housing and clean electricity.</p>
+            </aside>
+        </section>
+
+        <section class="home-section places-section">
+            <p class="eyebrow">Places in my story</p>
+            <h2>Vancouver, Paris and London.</h2>
+            <p>Three cities connected to my work, studies and life.</p>
+            <div class="city-grid">
+                <figure class="city-card">
+                    <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Skyline_of_Vancouver%2C_BC.jpg/960px-Skyline_of_Vancouver%2C_BC.jpg"
+                        alt="Downtown Vancouver skyline, harbour and North Shore mountains"
+                        width="900" height="600" loading="lazy" decoding="async">
+                    <figcaption>
+                        <strong>Vancouver</strong>
+                        <span>Photo: <a href="https://commons.wikimedia.org/wiki/File:Skyline_of_Vancouver,_BC.jpg">Quintin Soloviev</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+                    </figcaption>
+                </figure>
+                <figure class="city-card">
+                    <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Paris_Night.jpg/960px-Paris_Night.jpg"
+                        alt="Paris at dusk viewed from the Montparnasse Tower, with the Eiffel Tower in the distance"
+                        width="900" height="284" loading="lazy" decoding="async">
+                    <figcaption>
+                        <strong>Paris</strong>
+                        <span>Photo: <a href="https://commons.wikimedia.org/wiki/File:Paris_Night.jpg">Benh LIEU SONG</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></span>
+                    </figcaption>
+                </figure>
+                <figure class="city-card">
+                    <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/London_Skyline_from_Waterloo_Bridge%2C_London%2C_UK_-_Diliff.jpg/960px-London_Skyline_from_Waterloo_Bridge%2C_London%2C_UK_-_Diliff.jpg"
+                        alt="London skyline along the River Thames at dusk, viewed from Waterloo Bridge"
+                        width="900" height="443" loading="lazy" decoding="async">
+                    <figcaption>
+                        <strong>London</strong>
+                        <span>Photo: <a href="https://commons.wikimedia.org/wiki/File:London_Skyline_from_Waterloo_Bridge,_London,_UK_-_Diliff.jpg">DAVID ILIFF</a> · <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a></span>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="home-section">
+            <p class="eyebrow">A closer look</p>
+            <h2>Research with a practical purpose.</h2>
+            <p>This site brings together selected policy work, data visualisation projects and professional experience.</p>
+            <div class="card-grid">
+                <article class="feature-card">
+                    <p class="eyebrow">Selected work</p>
+                    <h3>Projects</h3>
+                    <p>Explore current work in policy analysis, housing and clean electricity.</p>
+                    <a href="projects.html">Browse projects →</a>
+                </article>
+                <article class="feature-card">
+                    <p class="eyebrow">Background</p>
+                    <h3>Experience and publications</h3>
+                    <p>See my policy experience, publications, research and technical skills.</p>
+                    <a href="cv.html">View my CV →</a>
+                </article>
+            </div>
+        </section>
     </main>
+
+    <footer>Victor M. Lucy <span aria-hidden="true">·</span> London and Paris</footer>
 </body>
 </html>
