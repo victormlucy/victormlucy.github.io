@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Data visualisation exercises and charts by Victor M. Lucy." data-i18n-content="portfolioDescription">
+    <title data-i18n-title="portfolioTitle">Portfolio | Victor M. Lucy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <a class="site-name" href="index.html" aria-label="Victor M. Lucy"><span class="wordmark-first" aria-hidden="true">Victor</span><span class="wordmark-middle" aria-hidden="true">M.</span><span class="wordmark-last" aria-hidden="true">Lucy</span></a>
+        <nav aria-label="Main navigation" data-i18n-aria-label="mainNavigation">
+            <a href="index.html" data-i18n="navHome">Home</a>
+            <a href="about.html" data-i18n="navAbout">About</a>
+            <a href="projects.html" aria-current="page" data-i18n="navProjects">Projects</a>
+            <a href="cv.html" data-i18n="navCV">CV</a>
+            <a href="contact.html" data-i18n="navContact">Contact</a>
+        </nav>
+        <label class="language-switcher">
+            <span data-i18n="languageLabel">Language</span>
+            <select data-language-select aria-label="Select language" data-i18n-aria-label="selectLanguage">
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+            </select>
+        </label>
+    </header>
+
+    <main class="portfolio">
+        <p class="page-breadcrumb"><a href="projects.html" data-i18n="navProjects">Projects</a> / <span data-i18n="portfolioLink">Portfolio</span></p>
+        <p class="eyebrow" data-i18n="portfolioCourse">PP434 · Automated Data Visualisation for Policymaking</p>
+        <h1 data-i18n="portfolioHeading">Portfolio</h1>
+        <p class="portfolio-intro" data-i18n="portfolioIntro">A collection of data visualisation exercises from my LSE MPA coursework. I’ll add new charts as the portfolio develops.</p>
+        <div class="portfolio-meta">
+            <span data-i18n="portfolioPeriod">Autumn 2026</span>
+            <a href="https://github.com/victormlucy/victormlucy.github.io" data-i18n="portfolioCodeData">Code and data on GitHub</a>
+        </div>
+
+        <section class="portfolio-section" aria-labelledby="charting-heading">
+            <h2 id="charting-heading" data-i18n="portfolioChartSection">Charting exercises</h2>
+            <div class="portfolio-grid">
+                <figure class="portfolio-chart">
+                    <h3 data-i18n="portfolioChart1Title">Comparing GDP per capita</h3>
+                    <p data-i18n="portfolioChart1Description">A first exercise in comparing a measure across countries with a bar chart.</p>
+                    <div class="chart-render" data-chart-spec="wk1_chart1.json" data-chart-kind="country-gdp">
+                        <p class="chart-status" data-i18n="chartLoading">Loading chart…</p>
+                    </div>
+                    <figcaption><a href="wk1_chart1.json" data-i18n="chartSpecLink">View chart specification</a></figcaption>
+                </figure>
+
+                <figure class="portfolio-chart">
+                    <h3 data-i18n="portfolioChart2Title">GDP per capita over time</h3>
+                    <p data-i18n="portfolioChart2Description">A line chart showing how real GDP per capita changes over time across countries.</p>
+                    <div class="chart-render" data-chart-spec="wk1_chart2.json" data-chart-kind="gdp-over-time">
+                        <p class="chart-status" data-i18n="chartLoading">Loading chart…</p>
+                    </div>
+                    <figcaption>
+                        <span data-i18n="portfolioChart2Source">Source: World Bank data via Economics Observatory.</span>
+                        <a href="wk1_chart2.json" data-i18n="chartSpecLink">View chart specification</a>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="portfolio-section" aria-labelledby="project-heading">
+            <p class="eyebrow" data-i18n="portfolioProjectEyebrow">In progress</p>
+            <h2 id="project-heading" data-i18n="portfolioProjectTitle">England’s council tax and today’s home values</h2>
+            <p class="portfolio-intro" data-i18n="portfolioProjectDescription">My course project looks at how council-tax bands based on 1991 property values compare with what homes are worth today.</p>
+            <a class="button" href="project.html" data-i18n="portfolioProjectLink">Read about the project</a>
+        </section>
+    </main>
+
+    <footer><span class="wordmark footer-wordmark" aria-label="Victor M. Lucy"><span class="wordmark-first" aria-hidden="true">Victor</span><span class="wordmark-middle" aria-hidden="true">M.</span><span class="wordmark-last" aria-hidden="true">Lucy</span></span></footer>
+    <script src="translations.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
+    <script>
+        const chartAxisLabels = {
+            es: { country: "País", gdp: "PIB per cápita", year: "Año" },
+            fr: { country: "Pays", gdp: "PIB par habitant", year: "Année" }
+        };
+        const chartLabels = {
+            es: { unavailable: "No se pudo cargar el gráfico. Consulta la especificación enlazada." },
+            fr: { unavailable: "Le graphique n’a pas pu être chargé. Consultez la spécification liée." }
+        };
+        const chartSpecs = [...document.querySelectorAll("[data-chart-spec]")];
+
+        async function renderChart(container) {
+            const response = await fetch(container.dataset.chartSpec);
+            if (!response.ok) {
+                throw new Error(`Could not load ${container.dataset.chartSpec}: ${response.status}`);
+            }
+
+            const spec = await response.json();
+            const language = document.documentElement.lang;
+            const axisLabels = chartAxisLabels[language] || {};
+            const plotWidth = Math.max(180, Math.floor(container.clientWidth - 24));
+
+            spec.width = Math.min(spec.width || 420, plotWidth);
+            spec.title = null;
+            spec.config = {
+                ...spec.config,
+                view: { stroke: null },
+                axis: {
+                    ...spec.config?.axis,
+                    domainColor: "#dce5e2",
+                    gridColor: "#dce5e2",
+                    labelColor: "#60717a",
+                    titleColor: "#172d3a",
+                    labelFont: "Inter, Avenir, sans-serif",
+                    titleFont: "Inter, Avenir, sans-serif"
+                }
+            };
+
+            if (container.dataset.chartKind === "country-gdp") {
+                spec.mark.color = "#a94f12";
+                spec.encoding.x.title = axisLabels.country || "Country";
+                spec.encoding.y.title = axisLabels.gdp || "GDP per capita";
+            } else {
+                spec.encoding.x.title = axisLabels.year || "Year";
+                spec.encoding.y.title = axisLabels.gdp || "GDP per capita";
+                spec.encoding.color.title = axisLabels.country || "Country";
+            }
+
+            container.replaceChildren();
+            await vegaEmbed(container, spec, { actions: false, renderer: "svg" });
+        }
+
+        function showChartError(container, error) {
+            const status = document.createElement("p");
+            status.className = "chart-status";
+            status.setAttribute("role", "status");
+            status.textContent = chartLabels[document.documentElement.lang]?.unavailable
+                || "The chart could not be loaded. See the linked specification.";
+            container.replaceChildren(status);
+            console.error("Could not render a portfolio chart.", error);
+        }
+
+        chartSpecs.forEach((container) => {
+            renderChart(container).catch((error) => showChartError(container, error));
+        });
+
+        document.querySelector("[data-language-select]")?.addEventListener("change", () => {
+            chartSpecs.forEach((container) => {
+                renderChart(container).catch((error) => showChartError(container, error));
+            });
+        });
+    </script>
+</body>
+</html>
